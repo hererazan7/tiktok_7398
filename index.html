@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>تحذير أمني</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="overlay" class="overlay">
+  <div class="card warning" id="warning">
+    <div class="left">
+      <!-- Simple SVG hooded "hacker" illustration -->
+      <svg viewBox="0 0 200 200" class="hacker" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#111"/>
+            <stop offset="1" stop-color="#333"/>
+          </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="transparent"></rect>
+        <g transform="translate(40,20) scale(0.9)">
+          <ellipse cx="60" cy="142" rx="58" ry="18" fill="#060606" opacity="0.6"/>
+          <path d="M10 70 C20 10,100 10,110 70 L100 110 C100 110,60 130,20 110 Z" fill="url(#g)"/>
+          <circle cx="62" cy="78" r="16" fill="#050505"/>
+          <rect x="46" y="74" width="32" height="8" rx="4" fill="#222"/>
+        </g>
+      </svg>
+    </div>
+    <div class="right">
+      <h1 class="danger">تم اختراق حسابك!</h1>
+      <p class="sub">يرجى عدم إيقاف تشغيل الجهاز — محاولة استرجاع تلقائية قيد التنفيذ...</p>
+    </div>
+  </div>
+
+  <div class="card reveal" id="reveal" aria-hidden="true">
+    <div class="reveal-content">
+      <div class="laugh-emoji">😂</div>
+      <h1>مقلب!</h1>
+      <p>لم يتم اختراق جهازك — مجرد مزحة آمنة. لا تشيل هم 😊</p>
+      <button id="retry">نفّذ المقلب مرة ثانية</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

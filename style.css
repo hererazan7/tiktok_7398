@@ -1,0 +1,52 @@
+/* style.css */
+:root{
+  --bg: #0b0b0d;
+  --card: #0f1113;
+  --danger: #ff3b3b;
+  --muted: #bfc5c9;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background: radial-gradient(circle at 10% 10%, #071018 0%, #020203 70%), var(--bg);
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.overlay{width:100%;max-width:900px;position:relative}
+.card{
+  display:flex;
+  gap:20px;
+  padding:24px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  align-items:center;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+.card.warning{border-left:6px solid var(--danger); background: linear-gradient(180deg, rgba(255,0,0,0.03), rgba(0,0,0,0.2));}
+.hacker{width:150px;height:150px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.8));}
+.right{flex:1;text-align:right}
+.danger{color:var(--danger);font-size:38px;letter-spacing:2px;margin-bottom:6px}
+.sub{color:var(--muted);opacity:0.9}
+
+/* reveal card (hidden initially) */
+.card.reveal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:40px;border-radius:16px;backdrop-filter: blur(6px);transform:scale(0.96);opacity:0;pointer-events:none;transition:all 0.5s ease}
+.card.reveal.show{opacity:1;pointer-events:auto;transform:scale(1)}
+.reveal-content{text-align:center;color:#fff}
+.reveal-content h1{font-size:48px;margin-top:12px;margin-bottom:6px;color:#fff}
+.reveal-content p{color:#e6e6e6;margin-bottom:12px}
+.laugh-emoji{font-size:88px;transform:translateY(-6px);filter:drop-shadow(0 6px 18px rgba(0,0,0,0.6))}
+#retry{background:#ffffff11;border:1px solid #ffffff22;color:#fff;padding:10px 16px;border-radius:10px;cursor:pointer}
+#retry:hover{transform:translateY(-2px)}
+
+/* small responsive */
+@media (max-width:600px){
+  .card{flex-direction:column; text-align:center}
+  .right{text-align:center}
+  .hacker{margin:0 auto}
+}
